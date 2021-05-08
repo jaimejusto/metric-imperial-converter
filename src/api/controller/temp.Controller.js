@@ -30,7 +30,7 @@ const post = (req, res) => {
 }
 
 const methodNotAllowed = (req, res) => {
-    res.status(405).set("Allow", "POST").end();
+    res.status(405).set("Allow", "POST").json({"Error": `${req.method} not allowed`});
 }
 
 

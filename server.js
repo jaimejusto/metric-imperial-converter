@@ -1,14 +1,17 @@
 const express = require("express");
+const cors = require("cors");
+const app = express();
+app.enable("trust proxy");
+app.use(cors());
+app.use(express.json());
+
 const PORT = process.env.PORT || 8080;
 
 // Routes
-const apiRoute = require("./api/routes/apiRoute");
+const apiRoute = require("./src/api/routes/apiRoute");
 
 // Controllers
 
-
-const app = express();
-app.use(express.json());
 
 app.use('/api', apiRoute);
 
