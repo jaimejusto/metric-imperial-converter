@@ -10,8 +10,6 @@ const PORT = process.env.PORT || 8080;
 // Routes
 const apiRoute = require("./src/api/routes/apiRoute");
 
-// Controllers
-
 
 app.use('/api', apiRoute);
 
