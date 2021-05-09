@@ -66,17 +66,13 @@ Status: 400 Bad Request
 ```text
 Status: 406 Not Acceptable
 ```
-```text
-Error: API returns JSON only
-```
+
 
 > Unsupported Media Type
 ```text
 Status: 415 Unsupported Media Type
 ```
-```text
-Error: API only accepts JSON
-```
+
 
 ## Temperature
 Allows you to convert between Celsius and Fahrenheit.
@@ -140,17 +136,13 @@ Status: 400 Bad Request
 ```text
 Status: 406 Not Acceptable
 ```
-```text
-Error: API returns JSON only
-```
+
 
 > Unsupported Media Type
 ```text
 Status: 415 Unsupported Media Type
 ```
-```text
-Error: API only accepts JSON
-```
+
 
 
 
