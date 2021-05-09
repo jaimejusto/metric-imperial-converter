@@ -24,7 +24,7 @@ class Weight {
                 this.error.Error.push("Unit is required and must be either OZ, LB, TON, MG, G, or KG");
             }
             else {
-                this.error.Error = ["Unit is required and must be either OZ, LB, TON, MG, G, or KG"];
+                this.error.Error = ["Unit is required and must be either OZ, LB, G, or KG"];
             }
         }
     };

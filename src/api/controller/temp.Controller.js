@@ -25,7 +25,7 @@ const post = (req, res) => {
     } 
     
     else {
-        res.status(request_status).send("error");
+        res.status(request_status).end();
     }
 };
 
