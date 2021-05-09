@@ -62,7 +62,7 @@ Status: 400 Bad Request
 }
 ```
 
-> 406
+> Not Acceptable
 ```text
 Status: 406 Not Acceptable
 ```
@@ -70,7 +70,7 @@ Status: 406 Not Acceptable
 Error: API returns JSON only
 ```
 
-> 415
+> Unsupported Media Type
 ```text
 Status: 415 Unsupported Media Type
 ```
@@ -136,7 +136,7 @@ Status: 400 Bad Request
 }
 ```
 
-> 406
+> Not Acceptable
 ```text
 Status: 406 Not Acceptable
 ```
@@ -144,7 +144,7 @@ Status: 406 Not Acceptable
 Error: API returns JSON only
 ```
 
-> 415
+> Unsupported Media Type
 ```text
 Status: 415 Unsupported Media Type
 ```
