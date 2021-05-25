@@ -96,13 +96,13 @@ Request JSON Attributes
 
 |  Name       |  Type  |     Description                                                      | Required? |
 | ----------- | ------ | -------------------------------------------------------------------- | --------- |
-| temperature | Number | The temperature to convert.                                          |    Yes    |
+| temp | Number | The temperature to convert.                                          |    Yes    |
 |  unit       | String | The unit of the temperature being converted. Can only be "F" or "C". |    Yes    |
 
 Request Body Example
 ```json
 {
-  "temperature": 0,
+  "temp": 0,
   "unit": "C"
 }
 ```
@@ -114,7 +114,7 @@ Status: 200 OK
 ```
 ```json
 {
-  "temperature": 32,
+  "temp": 32,
   "unit": "F"
 }
 ```
@@ -126,7 +126,7 @@ Status: 400 Bad Request
 ```json
 {
   "Error": [
-      "Temperature is required and must be a number",
+      "Temp is required and must be a number",
       "Unit is required and must be either F or C"
   ]
 }
