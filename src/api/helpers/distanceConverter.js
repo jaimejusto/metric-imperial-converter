@@ -21,23 +21,23 @@ const unitEquals = (desired_unit, unit_to_check) => {
 const metricToImperial = (metricDistance, metricUnit, imperialUnit) => {
     let cm = metricDistance;
 
-    if ( unitEquals(metricUnit, "m") ) {
+    if ( unitEquals(metricUnit, "M") ) {
         cm = metricDistance * CM_PER_M;
     }
-    else if ( unitEquals(metricUnit, "km") ) {
+    else if ( unitEquals(metricUnit, "KM") ) {
         cm = metricDistance * CM_PER_KM;
     }
 
-    if ( unitEquals(imperialUnit, "in") ) {
+    if ( unitEquals(imperialUnit, "IN") ) {
         return performConversion(cm, INCH_PER_CM);
     }
-    else if ( unitEquals(imperialUnit, "ft") ) {
+    else if ( unitEquals(imperialUnit, "FT") ) {
         return performConversion(cm, FEET_PER_CM);
     }
-    else if ( unitEquals(imperialUnit, "yd") ) {
+    else if ( unitEquals(imperialUnit, "YD") ) {
         return performConversion(cm, YARD_PER_CM);
     }
-    else if ( unitEquals(imperialUnit, "mi") ) {
+    else if ( unitEquals(imperialUnit, "MI") ) {
         return performConversion(cm, MILE_PER_CM);
     }
 };
@@ -45,25 +45,25 @@ const metricToImperial = (metricDistance, metricUnit, imperialUnit) => {
 const imperialToMetric = (imperialDistance, imperialUnit, metricUnit) => {
     let inches = imperialDistance;
 
-    if ( unitEquals(imperialUnit, "ft") ) {
+    if ( unitEquals(imperialUnit, "FT") ) {
         inches = imperialDistance * INCH_PER_FT;
     }
-    else if ( unitEquals(imperialUnit, "yd") ) {
+    else if ( unitEquals(imperialUnit, "YD") ) {
         inches = imperialDistance * INCH_PER_YD;
     }
-    else if ( unitEquals(imperialUnit, "mi") ) {
+    else if ( unitEquals(imperialUnit, "MI") ) {
         inches = imperialDistance * INCH_PER_MI;
     }
 
     let cm = performConversion(inches, CM_PER_INCH);
-    if ( unitEquals(metricUnit, "cm") ) {
+    if ( unitEquals(metricUnit, "CM") ) {
         return cm;
     }
-    else if ( unitEquals(metricUnit, "m") ) {
+    else if ( unitEquals(metricUnit, "M") ) {
         const m = cm / CM_PER_M;
         return m;
     }
-    else if ( unitEquals(metricUnit, "km") ) {
+    else if ( unitEquals(metricUnit, "KM") ) {
         const km = cm / CM_PER_KM;
         return km;
     }

@@ -1,8 +1,8 @@
 const conversions = require("../helpers/distanceConverter");
 const errors = require("../helpers/errorHandler");
 
-const metricUnits = ["cm", "m", "km"];
-const imperialUnits = ["in", "ft", "yd", "mi"];
+const metricUnits = ["CM", "M", "KM"];
+const imperialUnits = ["IN", "FT", "YD", "MI"];
 const allowedUnits = [].concat(metricUnits, imperialUnits);
 
 class Distance {

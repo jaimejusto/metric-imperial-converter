@@ -1,8 +1,8 @@
 const conversions = require("../helpers/areaConverter");
 const errors = require("../helpers/errorHandler");
 
-const metricSquareUnits = [ "cm2", "m2", "km2", "a", "ha"];
-const imperialSquareUnits = ["in2", "ft2", "yd2", "mi2", "ac",];
+const metricSquareUnits = [ "CM2", "M2", "KM2", "A", "HA"];
+const imperialSquareUnits = ["IN2", "FT2", "YD2", "MI2", "AC",];
 const allowedUnits = [].concat(metricSquareUnits, imperialSquareUnits);
 
 class Area {
