@@ -1,4 +1,6 @@
 const conversions = require("../helpers/tempConverter");
+const errors = require("../helpers/errorHandler");
+
 
 class Temperature {
     constructor(temp, unit) {
@@ -9,21 +11,11 @@ class Temperature {
 
     validateUserInput () {
         if (this.temp == undefined ||  typeof(this.temp) != "number") {
-            if (this.error.Error) {
-                this.error.Error.push("Temperature is required and must be a number");
-            }
-            else {
-                this.error.Error = ["Temperature is required and must be a number"];
-            }
+            errors.addError(this.error, "Temp is required and must be a number");
         }
 
         if (this.unit == undefined || (this.unit != "F" && this.unit != "C")) {
-            if (this.error.Error) {
-                this.error.Error.push("Unit is required and must be either F or C");
-            }
-            else {
-                this.error.Error = ["Unit is required and must be either F or C"];
-            }
+            errors.addError(this.error, "Unit is required and must be either F or C");
         }
     }
 

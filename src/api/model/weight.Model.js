@@ -1,4 +1,5 @@
 const conversions = require("../helpers/weightConverter");
+const errors = require("../helpers/errorHandler");
 
 class Weight {
     constructor(weight, unit) {
@@ -9,36 +10,22 @@ class Weight {
     
 
     validateUserInput () {
-        const allowedUnits = ["OZ", "LB", "G", "KG"]
+        const allowedUnits = ["OZ", "LB", "G", "KG"];
         if (this.weight == undefined ||  typeof(this.weight) != "number") {
-            if (this.error.Error) {
-                this.error.Error.push("Weight is required and must be a number");
-            }
-            else {
-                this.error.Error = ["Weight is required and must be a number"];
-            }
+            errors.addError(this.error, "Weight is required and must be a number");
         }
 
         if (this.unit == undefined || !allowedUnits.includes(this.unit)) {
-            if (this.error.Error) {
-                this.error.Error.push("Unit is required and must be either OZ, LB, TON, MG, G, or KG");
-            }
-            else {
-                this.error.Error = ["Unit is required and must be either OZ, LB, G, or KG"];
-            }
+            errors.addError(this.error, `Unit is required and must be one of the following: ${allowedUnits}`);
         }
     };
 
     convertWeight () {
         if (this.unit == "G" || this.unit == "KG") {
-            const results = conversions.metricToImperial(this.weight, this.unit);
-            this.weight = results[0];
-            this.unit = results[1];
+            [this.weight, this.unit] = conversions.metricToImperial(this.weight, this.unit);
         }
         else {
-            const results = conversions.imperialToMetric(this.weight, this.unit);
-            this.weight = results[0];
-            this.unit = results[1];
+            [this.weight, this.unit] = conversions.imperialToMetric(this.weight, this.unit);
         }
     };
 

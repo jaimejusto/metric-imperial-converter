@@ -1,4 +1,4 @@
-const Weight = require("../model/weight.Model");
+const Area = require("../model/area.Model");
 const helper = require("../routeHelpers/helperMethods");
 
 
@@ -8,18 +8,18 @@ const post = (req, res) => {
 
     // client accepting JSON and sent JSON body
     if (!request_status) {
-        const weight = new Weight(req.body.weight, req.body.unit);
-        weight.validateUserInput();
+        const area = new Area(req.body.area, req.body.unit, req.body.desired_unit);
+        area.validateUserInput();
 
         // error with user input
-        if (Object.keys(weight.error).length != 0) {
-            res.status(400).json(weight.error);
+        if (Object.keys(area.error).length != 0) {
+            res.status(400).json(area.error);
         }
 
         // user input valid
         else {
-            weight.convertWeight();
-            res.status(200).json(weight.formatOutput());
+            area.convertDistance();
+            res.status(200).json(area.formatOutput());
         }
     } 
     

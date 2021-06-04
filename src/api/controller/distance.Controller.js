@@ -1,4 +1,4 @@
-const Weight = require("../model/weight.Model");
+const Distance = require("../model/distance.Model");
 const helper = require("../routeHelpers/helperMethods");
 
 
@@ -8,18 +8,18 @@ const post = (req, res) => {
 
     // client accepting JSON and sent JSON body
     if (!request_status) {
-        const weight = new Weight(req.body.weight, req.body.unit);
-        weight.validateUserInput();
+        const distance = new Distance(req.body.distance, req.body.unit, req.body.desired_unit);
+        distance.validateUserInput();
 
         // error with user input
-        if (Object.keys(weight.error).length != 0) {
-            res.status(400).json(weight.error);
+        if (Object.keys(distance.error).length != 0) {
+            res.status(400).json(distance.error);
         }
 
         // user input valid
         else {
-            weight.convertWeight();
-            res.status(200).json(weight.formatOutput());
+            distance.convertDistance();
+            res.status(200).json(distance.formatOutput());
         }
     } 
     
