@@ -6,11 +6,10 @@ Web API for converting metric and imperial units. Converts the common units used
 
 https://sacred-vault-313118.wm.r.appspot.com/api
 
+---
 ## Weight
 
-Allows you to convert between kilograms and pounds and between grams and ounces.
-
----
+Allows you to convert between kilograms (KG) and pounds (LB) and between grams (G) and ounces (OZ).
 
 | **POST /weight** |
 | ---------------- |
@@ -87,11 +86,11 @@ Status: 406 Not Acceptable
 Status: 415 Unsupported Media Type
 ```
 
+---
 ## Temperature
 
-Allows you to convert between Celsius and Fahrenheit.
+Allows you to convert between Celsius (C) and Fahrenheit (F).
 
----
 
 | **POST /temperature** |
 | --------------------- |
@@ -168,11 +167,21 @@ Status: 406 Not Acceptable
 Status: 415 Unsupported Media Type
 ```
 
+---
 ## Distance
 
-Allows you to convert linear distance units.
+Allows you to convert between metric and imperial linear distance units.
+-Metric Units
+  -CM: centimeter
+  -M: meter
+  -KM: kilometer
+-Imperial Units
+  -IN: inch
+  -FT: feet
+  -YD: yard
+  -MI: mile
 
----
+
 | **POST /distance** |
 | ------------------ |
 
@@ -249,11 +258,23 @@ Status: 406 Not Acceptable
 Status: 415 Unsupported Media Type
 ```
 
+---
 ## Area
 
-Allows you to convert area units. 
+Allows you to convert between metric and imperial area units. 
+-Metric Units
+  -CM2: square centimeter
+  -M2: square meter
+  -KM2: square kilometer
+  -A: are
+  -HA: hectare
+-Imperial Units
+  -IN2: square inch
+  -FT2: square feet
+  -YD2: square yard
+  -MI2: square mile
+  -AC: acre
 
----
 
 | **POST /area** |
 | -------------- |
