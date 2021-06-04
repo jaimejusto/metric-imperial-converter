@@ -112,10 +112,10 @@ Request Body Format
 
 Request JSON Attributes
 
-| Name | Type   | Description                                                          | Required? |
-| ---- | ------ | -------------------------------------------------------------------- | --------- |
-| temp | Number | The temperature to convert.                                          | Yes       |
-| unit | String | The unit of the temperature being converted. Can only be "F" or "C". | Yes       |
+|  Name       |  Type  |     Description                                                      | Required? |
+| ----------- | ------ | -------------------------------------------------------------------- | --------- |
+| temp | Number | The temperature to convert.                                          |    Yes    |
+|  unit       | String | The unit of the temperature being converted. Can only be "F" or "C". |    Yes    |
 
 Request Body Example
 
@@ -150,8 +150,8 @@ Status: 400 Bad Request
 ```json
 {
   "Error": [
-    "Temp is required and must be a number",
-    "Unit is required and must be either F or C"
+      "Temp is required and must be a number",
+      "Unit is required and must be either F or C"
   ]
 }
 ```
